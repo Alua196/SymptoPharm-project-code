@@ -1,30 +1,30 @@
 
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 
     favItems: [],
-    totalAmount:0,
-    totalQuantity:0
+    totalAmount: 0,
+    totalQuantity: 0
 }
 
 const favSlice = createSlice({
     name: 'favourites',
     initialState,
     reducers: {
-        addItem: (state, action) =>{
+        addItem: (state, action) => {
             const newItem = action.payload;
             const existingItem = state.favItems.find(
-                (item)=> item.id === newItem.id
+                (item) => item.id === newItem.id
             );
 
             state.totalQuantity++
 
-            if(!existingItem){
+            if (!existingItem) {
                 state.favItems.push({
                     id: newItem.id,
                     productName: newItem.productName,
-                    image: newItem.imgUrl,
+                    imgUrl: newItem.imgUrl,
                     price: newItem.price,
                     quantity: 1,
                     totalPrice: newItem.price
@@ -37,10 +37,30 @@ const favSlice = createSlice({
             }
 
             state.totalAmount = state.favItems.reduce(
-                (total, item)=> total + Number(item.price) * Number(item.quantity)
+                (total, item) => total + Number(item.price) * Number(item.quantity), 0
+            );
+        },
+
+        deleteItem: (state, action) => {
+            const id = action.payload;
+            const existingItem = state.favItems.find(
+                (item) => item.id === id
+            );
+    
+            if (existingItem) {
+                state.favItems = state.favItems.filter(
+                    (item) => item.id !== id
+                )
+                state.totalQuantity = state.totalQuantity = existingItem.quantity
+            }
+    
+            state.totalAmount = state.favItems.reduce(
+                (total, item) => total + Number(item.price) * Number(item.quantity),0
             );
         },
     },
+
+    
 });
 
 export const favActions = favSlice.actions

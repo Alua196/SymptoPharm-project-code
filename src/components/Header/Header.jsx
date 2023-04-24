@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './header.css';
 
 import { motion } from 'framer-motion';
@@ -33,7 +33,8 @@ const Header = () => {
     const headerRef = useRef(null)
     const totalQuantity = useSelector(state=> state.favourites.totalQuantity)
 
-    const menuRef = useRef(null)
+    const menuRef = useRef(null);
+    const navigate = useNavigate();
 
     const stickyHeaderFunc = () => {
         window.addEventListener('scroll', () => {
@@ -52,7 +53,11 @@ const Header = () => {
     });
     
     
-    const menuToggle = ()=> menuRef.current.classList.toggle('active__menu')
+    const menuToggle = ()=> menuRef.current.classList.toggle('active__menu');
+
+    const navigateToFav =()=> {
+        navigate("/favourites");
+    }
 
 
     return <header className="header" ref={headerRef}>
@@ -80,7 +85,7 @@ const Header = () => {
                     </div>
 
                     <div className="nav__icons">
-                        <span className='fav__icon'>
+                        <span className='fav__icon' onClick={navigateToFav}>
                             <i class="ri-heart-line"></i>
                             <span className="badge">{totalQuantity}</span>
                         </span>
