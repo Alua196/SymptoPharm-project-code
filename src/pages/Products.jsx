@@ -18,26 +18,44 @@ const Products = () => {
     const handleFilter = (e )=>{
 
         const filterValue = e.target.value 
-        if(filterValue==='sofa') {
-            const filteredProducts = products.filter(item=> item.category==='sofa');
+        if(filterValue==='Antibiotics') {
+            const filteredProducts = products.filter(item=> item.category==='Antibiotics');
 
             setProductsData(filteredProducts);
         }
 
-        if(filterValue==='mobile') {
-            const filteredProducts = products.filter(item=> item.category==='mobile');
+        if(filterValue==='Vitamins') {
+            const filteredProducts = products.filter(item=> item.category==='Digestive');
 
             setProductsData(filteredProducts);
         }
 
-        if(filterValue==='chair') {
-            const filteredProducts = products.filter(item=> item.category==='chair');
+        if(filterValue==='Vitamins') {
+            const filteredProducts = products.filter(item=> item.category==='Vitamins');
 
             setProductsData(filteredProducts);
         }
 
-        if(filterValue==='watch') {
-            const filteredProducts = products.filter(item=> item.category==='watch');
+        if(filterValue==='Skin') {
+            const filteredProducts = products.filter(item=> item.category==='Skin');
+
+            setProductsData(filteredProducts);
+        }
+
+        if(filterValue==='Cough and Flu') {
+            const filteredProducts = products.filter(item=> item.category==='Cough and Flu');
+
+            setProductsData(filteredProducts);
+        }
+
+        if(filterValue==='Fever') {
+            const filteredProducts = products.filter(item=> item.category==='Fever');
+
+            setProductsData(filteredProducts);
+        }
+
+        if(filterValue==='Antiseptics') {
+            const filteredProducts = products.filter(item=> item.category==='Antiseptics');
 
             setProductsData(filteredProducts);
         }
@@ -63,18 +81,21 @@ const Products = () => {
         <section>
             <Container>
                 <Row>
-                    <Col lg='3' md='3'>
+                    <Col lg='3' md='6'>
                         <div className="filter__widget">
                             <select onChange={handleFilter}>
                                 <option>Filter by Category</option>
-                                <option value="sofa">Sofa</option>
-                                <option value="chair">Chair</option>
-                                <option value="mobile">Mobile</option>
-                                <option value="watch">Watch</option>
+                                <option value="Antibiotics">Antibiotics</option>
+                                <option value="Vitamins">Vitamins</option>
+                                <option value="Digestive">Digestive</option>
+                                <option value="Skin">Skin</option>
+                                <option value="Cough and Flu">Cough and Flu</option>
+                                <option value="Fever">Fever</option>
+                                <option value="Antiseptics">Antiseptics</option>
                             </select>
                         </div>
                     </Col>
-                    <Col lg='3' md='3'>
+                    <Col lg='3' md='6' className='text-end'>
                     <div className="filter__widget">
                             <select>
                                 <option>Sort by</option>
@@ -83,7 +104,7 @@ const Products = () => {
                             </select>
                         </div>
                     </Col>
-                    <Col lg='6' md='6'>
+                    <Col lg='6' md='12'>
                         <div className="search__box">
                             <input type="text" placeholder='Search...' onChange={handleSearch} />
                             <span><i class="ri-search-2-line"></i></span>

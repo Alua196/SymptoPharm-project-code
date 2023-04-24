@@ -25,30 +25,36 @@ const Home = () => {
     const [bestSalesProducts, setBestSalesProducts] = useState([]);
     const [newArrivalsProducts, setNewArrivalsProducts] = useState([]);
     const [popularProducts, setPopularProducts] = useState([]);
+    const [trendingSecondProducts, setTrendingSecondProducts] = useState([]);
 
     const year = new Date().getFullYear();
 
     useEffect(()=>{
         const filteredTrendingProducts = products.filter(
-            (item)=> item.category === 'chair'
+            (item)=> item.category === 'Vitamins'
+        );
+
+        const filteredTrendingSecondProducts = products.filter(
+            (item)=> item.category === 'Fever'
         );
 
         const filteredBestSalesProducts = products.filter(
-            (item)=> item.category === 'sofa'
+            (item)=> item.category === 'Antibiotics'
         );
 
         const filteredNewArrivalsProducts = products.filter(
-            (item)=> item.category === 'mobile'
+            (item)=> item.category === 'Digestive'
         );
 
         const filteredPopularProducts = products.filter(
-            (item)=> item.category === 'watch'
+            (item)=> item.category === 'Skin'
         );
 
         setTrendingProducts(filteredTrendingProducts);
         setBestSalesProducts(filteredBestSalesProducts);
         setNewArrivalsProducts(filteredNewArrivalsProducts);
         setPopularProducts(filteredPopularProducts);
+        setTrendingSecondProducts(filteredTrendingSecondProducts);
 
     }, []);
 
@@ -87,6 +93,7 @@ const Home = () => {
                         <h2 className="section__title">Trending Products</h2>
                     </Col>
                     <ProductsList data={trendingProducts} />
+                    <ProductsList data={trendingSecondProducts} />
                 </Row>
             </Container>
         </section>
