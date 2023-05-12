@@ -108,6 +108,7 @@ const Home = () => {
                     </Col>
 
                     <ProductsList data={bestSalesProducts} />
+                    <ProductsList data={newArrivalsProducts} />
                 </Row>
             </Container>
         </section>

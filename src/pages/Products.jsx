@@ -70,7 +70,12 @@ const Products = () => {
             item=> item.productName.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
+        const searchedSymptom = products.filter(
+            item=> item.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
         setProductsData(searchedProducts);
+        setProductsData(searchedSymptom);
     }
 
 
