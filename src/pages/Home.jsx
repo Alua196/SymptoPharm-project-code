@@ -31,23 +31,23 @@ const Home = () => {
 
     useEffect(()=>{
         const filteredTrendingProducts = products.filter(
-            (item)=> item.category === 'Vitamins'
+            (item)=> item.group === 'Vitamins'
         );
 
         const filteredTrendingSecondProducts = products.filter(
-            (item)=> item.category === 'Fever'
+            (item)=> item.group === 'Fever'
         );
 
         const filteredBestSalesProducts = products.filter(
-            (item)=> item.category === 'Antibiotics'
+            (item)=> item.group === 'Antibiotics'
         );
 
         const filteredNewArrivalsProducts = products.filter(
-            (item)=> item.category === 'Digestive'
+            (item)=> item.group === 'Digestive'
         );
 
         const filteredPopularProducts = products.filter(
-            (item)=> item.category === 'Skin'
+            (item)=> item.group === 'Skin'
         );
 
         setTrendingProducts(filteredTrendingProducts);
@@ -155,11 +155,11 @@ const Home = () => {
 
 
 
-        <section className="popular__category">
+        <section className="popular__group">
             <Container>
                 <Row>
                 <Col lg='12' className="text-center mb-5">
-                        <h2 className="section__title">Popular in Category</h2>
+                        <h2 className="section__title">Popular in Group</h2>
                     </Col>
 
                     <ProductsList data={popularProducts} />

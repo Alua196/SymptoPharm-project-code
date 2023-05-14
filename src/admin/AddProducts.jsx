@@ -143,7 +143,7 @@ const AddProducts = () => {
                                                     onChange={e => setEnterGroup(e.target.value)}
                                                     required
                                                 >
-                                                    <option>Filter by Category</option>
+                                                    <option>Filter by Group</option>
                                                     <option value="Antibiotics">Antibiotics</option>
                                                     <option value="Vitamins">Vitamins</option>
                                                     <option value="Digestive">Digestive</option>

@@ -19,43 +19,43 @@ const Products = () => {
 
         const filterValue = e.target.value 
         if(filterValue==='Antibiotics') {
-            const filteredProducts = products.filter(item=> item.category==='Antibiotics');
+            const filteredProducts = products.filter(item=> item.group==='Antibiotics');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Vitamins') {
-            const filteredProducts = products.filter(item=> item.category==='Digestive');
+            const filteredProducts = products.filter(item=> item.group==='Digestive');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Vitamins') {
-            const filteredProducts = products.filter(item=> item.category==='Vitamins');
+            const filteredProducts = products.filter(item=> item.group==='Vitamins');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Skin') {
-            const filteredProducts = products.filter(item=> item.category==='Skin');
+            const filteredProducts = products.filter(item=> item.group==='Skin');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Cough and Flu') {
-            const filteredProducts = products.filter(item=> item.category==='Cough and Flu');
+            const filteredProducts = products.filter(item=> item.group==='Cough and Flu');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Fever') {
-            const filteredProducts = products.filter(item=> item.category==='Fever');
+            const filteredProducts = products.filter(item=> item.group==='Fever');
 
             setProductsData(filteredProducts);
         }
 
         if(filterValue==='Antiseptics') {
-            const filteredProducts = products.filter(item=> item.category==='Antiseptics');
+            const filteredProducts = products.filter(item=> item.group==='Antiseptics');
 
             setProductsData(filteredProducts);
         }
@@ -89,7 +89,7 @@ const Products = () => {
                     <Col lg='3' md='6'>
                         <div className="filter__widget">
                             <select onChange={handleFilter}>
-                                <option>Filter by Category</option>
+                                <option>Filter by Group</option>
                                 <option value="Antibiotics">Antibiotics</option>
                                 <option value="Vitamins">Vitamins</option>
                                 <option value="Digestive">Digestive</option>

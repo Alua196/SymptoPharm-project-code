@@ -26,10 +26,10 @@ const ProductDetails = () => {
     const { id } = useParams();
     const product = products.find(item => item.id === id);
 
-    const { imgUrl, productName, price, avgRating, reviews, description, shortDesc, category } = product;
+    const { imgUrl, productName, price, avgRating, reviews, description, shortDesc, group } = product;
 
 
-    const relatedProducts = products.filter(item => item.category === category);
+    const relatedProducts = products.filter(item => item.group === group);
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -95,7 +95,7 @@ const ProductDetails = () => {
 
                             <div className='d-flex align-items-center gap-5'>
                                 <span className='product__price'>{price}₸</span>
-                                <span>Category: {category.toUpperCase()}</span>
+                                <span>Group: {group.toUpperCase()}</span>
                             </div>
                             <p className='mt-3'>{shortDesc}</p>
 
