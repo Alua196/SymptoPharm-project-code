@@ -6,6 +6,8 @@
     border-radius: 5px;
     background: var(--primary-color);
     color: #fff;
+    overflow: auto;
+    margin-bottom: 25px;
 }
 
 .filter__widget select:focus {

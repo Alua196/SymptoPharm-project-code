@@ -29,8 +29,6 @@ const ProductDetails = () => {
 
     const [rating, setRating] = useState(null);
     const { id } = useParams();
-
-    console.log(products)
     
 
     const docRef = doc(db,'products', id);
@@ -50,7 +48,7 @@ const ProductDetails = () => {
         };
       
         getProduct();
-      }, [docRef, id]);
+      }, []);
     
 
     const { 
@@ -63,12 +61,6 @@ const ProductDetails = () => {
         // reviews,
         shortDesc
     } = product;
-
-
-    console.log(id);
-    console.log(group);
-    console.log(products);
-    console.log(product);
 
 
 
@@ -138,7 +130,7 @@ const ProductDetails = () => {
 
                             <div className='d-flex align-items-center gap-5'>
                                 <span className='product__price'>{price}₸</span>
-                                <span>Group: {group.toUpperCase()}</span>
+                                <span>Group: {group?.toUpperCase()}</span>
                             </div>
                             <p className='mt-3'>{shortDesc}</p>
 

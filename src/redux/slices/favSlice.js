@@ -24,7 +24,7 @@ const favSlice = createSlice({
                 state.favItems.push({
                     id: newItem.id,
                     productName: newItem.productName,
-                    imgUrl: newItem.imgUrl,
+                    imgUrl: newItem.imgURL,
                     price: newItem.price,
                     quantity: 1,
                     totalPrice: newItem.price

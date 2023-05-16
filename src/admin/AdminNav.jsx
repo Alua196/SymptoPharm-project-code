@@ -19,8 +19,8 @@ const AdminNav = () => {
             path: '/dashboard/all-products'
         },
         {
-            display: 'Orders',
-            path: '/dashboard/orders'
+            display: 'Add-Product',
+            path: '/dashboard/add-product'
         },
         {
             display: 'Users',

@@ -35,19 +35,19 @@ const Home = () => {
 
     useEffect(() => {
         const filteredTrendingProducts = products.filter(
-            (item) => item.group === 'Vitamins'
+            (item) => item.group === 'Respiratory'
         );
 
         const filteredBestSalesProducts = products.filter(
-            (item) => item.group === 'Antibiotics'
+            (item) => item.group === 'BAD'
         );
 
         const filteredNewArrivalsProducts = products.filter(
-            (item) => item.group === 'Digestive'
+            (item) => item.group === 'Vitamins'
         );
 
         const filteredPopularProducts = products.filter(
-            (item) => item.group === 'Skin'
+            (item) => item.group === 'Analgetic'
         );
 
         setTrendingProducts(filteredTrendingProducts);

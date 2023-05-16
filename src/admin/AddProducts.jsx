@@ -144,13 +144,21 @@ const AddProducts = () => {
                                                     required
                                                 >
                                                     <option>Select Group</option>
-                                                    <option value="Antibiotics">Antibiotics</option>
-                                                    <option value="Vitamins">Vitamins</option>
-                                                    <option value="Digestive">Digestive</option>
-                                                    <option value="Skin">Skin</option>
-                                                    <option value="Cough and Flu">Cough and Flu</option>
-                                                    <option value="Fever">Fever</option>
-                                                    <option value="Antiseptics">Antiseptics</option>
+                                                    <option value="Analgetic">Анальгетические и нестероидные противовоспалительные препараты</option>
+                                                    <option value="Angioprotective">Ангиопротекторное средство</option>
+                                                    <option value="BAD">БАД</option>
+                                                    <option value="Respiratory">Препараты для лечения гриппа и ОРВИ</option>
+                                                    <option value="Nervous">Препараты для лечения заболеваний нервной системы</option>
+                                                    <option value="Gastrointestinal">Препараты для лечения и профилактики заболеваний желудочно-кишечного тракта</option>
+                                                    <option value="Vitamins">Препараты, содержащие витамины, минералы, растительные антиоксиданты</option>
+                                                    <option value="Pregnant">Препараты для беременных</option>
+                                                    <option value="Gynecology">Препараты, применяемые в акушерстве и гинекологии</option>
+                                                    <option value="Antifungal">Антифунгальные (противогрибковые) средства</option>
+                                                    <option value="Ear">Ушные капли</option>
+                                                    <option value="Ophthalmic">Офтальмологические средства</option>
+                                                    <option value="Nasal">Ежедневная гигиена, профилактика и комплексное лечение воспалительных заболеваний полости носа, околоносовых пазух и носоглотки</option>
+                                                    <option value="Antiplatelet">Антиагрегатное средство</option>
+                                                    <option value="Dermatotropic">Дерматотропные препараты</option>
                                                 </select>
                                             </FormGroup>
                                         </div>

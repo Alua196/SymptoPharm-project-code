@@ -79,6 +79,10 @@ const Footer = () => {
                                 </ListGroupItem>
 
                                 <ListGroupItem className="ps-0 border-0">
+                                    <Link to='/dashboard'>Dashboard</Link>
+                                </ListGroupItem>
+
+                                <ListGroupItem className="ps-0 border-0">
                                     <Link to='#'>Privacy Policy</Link>
                                 </ListGroupItem>
                             </ListGroup>
