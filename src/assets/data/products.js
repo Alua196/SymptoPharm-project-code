@@ -33,7 +33,7 @@ const products = [
     id: "01",
     productName: "AMOXSAN 500 MG 10 KAPSUL ",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/a4f4d159-2e8b-4f00-8ba4-605099e3d839_product_image_url.webp',
-    category: "Antibiotics",
+    group: "Antibiotics",
     price: 4000,
     shortDesc:
       "AMOXSAN adalah obat antibiotik yang mengandung Amoxicillin 500 mg.",
@@ -52,7 +52,7 @@ const products = [
     id: "02",
     productName: "ZITROLIN KAPLET 500 MG ",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/f9bf636d-22bb-4761-9448-9d436338ee5c_product_image_url.webp',
-    category: "Antibiotics",
+    group: "Antibiotics",
     price: 5000,
     shortDesc:
       "ZITROLIN merupakan obat dengan kandungan Azithromycin dalam bentuk kaplet salut selaput.",
@@ -75,7 +75,7 @@ const products = [
     id: "03",
     productName: "AMOXSAN DRY SIRUP 60 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/cef941df-136a-41c7-b44a-449ba346da57_product_image_url.webp',
-    category: "Antibiotics",
+    group: "Antibiotics",
     price: 3500,
     shortDesc:
       "AMOXSAN adalah obat antibiotik yang mengandung Amoxicillin 125 mg tiap 5 ml.",
@@ -97,7 +97,7 @@ const products = [
     id: "26",
     productName: "AMOXICILLIN 250 MG 10 KAPSUL ",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/2cdeb522-60e3-4ac7-b5f6-7a374ae52777_product_image_url.webp',
-    category: "Antibiotics",
+    group: "Antibiotics",
     price: 1000,
     shortDesc:
       "AMOXICILLIN merupakan antibiotik yang mengandung zat aktif Amoxicillin. Amoxicillin termasuk golongan antibiotik beta-lactam turunan ampicillin.",
@@ -119,7 +119,7 @@ const products = [
     id: "04",
     productName: "AMOXICILLIN SIRUP 125 MG/5 ML 60 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/4c1bff61-da76-49cd-a1d8-513eb75db4e4_product_image_url.webp',
-    category: "Antibiotics",
+    group: "Antibiotics",
     price: 1800,
     shortDesc:
       "AMOXICILLIN SIRUP 125 MG/5 ML merupakan obat antibiotik generik turunan Penisilin dengan aktivitas antibakteri spektrum luas.",
@@ -142,7 +142,7 @@ const products = [
     id: "05",
     productName: "PHARMATON FORMULA 5 KAPSUL",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/81e69e67-a485-4a77-bab7-c9e6577b00cd_product_image_url.webp',
-    category: "Vitamins",
+    group: "Vitamins",
     price: 4000,
     shortDesc:
       "PHARMATON FORMULA merupakan kombinasi dari multivitamin, mineral dan ekstrak gingseng yang yang efektif mengurangi rasa letih, meningkatkan stamina pada saat aktivitas fisik, mendukung memori dan kemampuan belajar, serta dapat membantu menstabilkan emosi.",
@@ -165,7 +165,7 @@ const products = [
     id: "06",
     productName: "IMBOOST FORCE EXTRA STRENGTH 10 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/bb39638d-3536-4cd7-934a-519ccc96dc4e_product_image_url.webp',
-    category: "Vitamins",
+    group: "Vitamins",
     price: 9650,
     shortDesc:
       "IMBOOST FORCE EXTRA STRENGTH TABLET merupakan suplemen dengan kandungan Echinacea purpurea herb dry extract, Blackelderberry fruit dry extract, Zn Piccolinate dalam bentuk kaplet salut selaput.",
@@ -187,7 +187,7 @@ const products = [
     id: "07",
     productName: "HOLISTICARE ESTER C 30 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/093cc977-5cb3-44e3-b225-f233a8969faa_product_image_url.webp',
-    category: "Vitamins",
+    group: "Vitamins",
     price: 6050,
     shortDesc:
       "HOLISTICARE ESTER C TABLET merupakan suplemen yang mengandung Vitamin C dalam bentuk ester.",
@@ -210,7 +210,7 @@ const products = [
     id: "27",
     productName: "ENERVON-C 30 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/ceaa46b9-b668-4d9b-988f-909c0d42a141_product_image_url.webp',
-    category: "Vitamins",
+    group: "Vitamins",
     price: 5500,
     shortDesc:
       "ENERVON C merupakan suplemen makanan dengan kandungan multivitamin seperti Vitamin C, Vitamin B1, Vitamin B2, Vitamin B6, Vitamin B12, Vitamin D, Niasinamide, Kalsium pantotenat dalam bentuk tablet salut.",
@@ -233,7 +233,7 @@ const products = [
     id: "08",
     productName: "REDOXON TRIPLE ACTION EFFERVESCENT 10 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/5753ee0c-1f3e-47c5-a0e0-e12d5e070001_product_image_url.webp',
-    category: "Vitamins",
+    group: "Vitamins",
     price: 3850,
     shortDesc:
       "REDOXON TRIPLE ACTION EFFERVESCENT dilengkapi dengan Vitamin D yang bekerja sama dengan Vitamin C dan Zinc, membantu menjaga daya tahan tubuh pada saat perjalanan, kondisi perubahan cuaca, dan paparan polusi.",
@@ -256,7 +256,7 @@ const products = [
     id: "09",
     productName: "POLYSILANE SIRUP 100 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/b9b8f712-95a3-43eb-b511-e6ee9159c18c_product_image_url.webp',
-    category: "Digestive",
+    group: "Digestive",
     price: 2500,
     shortDesc:
       "POLYSILANE SIRUP merupakan obat maag dan anti kembung dengan kandungan Dimetilpolisiloksan, Aluminium hidroksida, dan Magnesium hidroksida dalam bentuk sirup.",
@@ -279,7 +279,7 @@ const products = [
     id: "10",
     productName: "ANTASIDA DOEN 10 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/e23de753-b921-4b65-b505-6480bbc29640_product_image_url.webp',
-    category: "Digestive",
+    group: "Digestive",
     price: 800,
     shortDesc:
       "ANTASIDA DOEN merupakan tablet kunyah dengan kandungan Alumunium Hydroxide dan Magnesium Hydroxide.",
@@ -301,7 +301,7 @@ const products = [
     id: "25",
     productName: "PROMAG 12 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/630231_1-4-2019_18-19-5.jpg',
-    category: "Digestive",
+    group: "Digestive",
     price: 800,
     shortDesc:
       "PROMAG merupakan obat dengan kandungan Hydrotalcite, Mg(OH)2, Simethicone dalam bentuk tablet.",
@@ -323,7 +323,7 @@ const products = [
     id: "11",
     productName: "DERMATIX ULTRA GEL 15 G",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/4e225a58-5096-40db-bc4b-45caead0ef98_product_image_url.webp',
-    category: "Skin",
+    group: "Skin",
     price: 23550,
     shortDesc:
       "DERMATIX ULTRA GEL 15 G merupakan obat yang digunakan untuk membantu menyamarkan bahkan menghilangkan bekas luka.",
@@ -346,7 +346,7 @@ const products = [
     id: "12",
     productName: "KALPANAX K CREAM 5 G",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/968bf501-99d8-4045-849c-cc406f356077_product_image_url.webp',
-    category: "Skin",
+    group: "Skin",
     price: 2700,
     shortDesc:
       "KALPANAX K CREAM mengandung Miconazole yang merupaka obat anti jamur golongan imidazole, digunakan untuk mengobati penyakit kulit akibat infeksi jamur.",
@@ -369,7 +369,7 @@ const products = [
     id: "13",
     productName: "BISOLVON EXTRA SIRUP 60 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/208a7044-dbea-4614-af2d-ba4ede65ba53_product_image_url.webp',
-    category: "Cough and Flu",
+    group: "Cough and Flu",
     price: 4200,
     shortDesc:
       "BISOLVON EXTRA SIRUP mengandung Bromhexine HCl dan Guaifenesin.",
@@ -392,7 +392,7 @@ const products = [
     id: "14",
     productName: "OBH COMBI PLUS BATUK FLU MENTHOL 100 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/5c4dad7f-9fc9-4c50-bfca-35c78033c8a6_product_image_url.webp',
-    category: "Cough and Flu",
+    group: "Cough and Flu",
     price: 3350,
     shortDesc:
       "OBH COMBI PLUS BATUK FLU adalah obat yang digunakan untuk meredakan batuk yang disertai gejala-gejala flu seperti demam, sakit kepala, hidung tersumbat, dan bersin-bersin.",
@@ -415,7 +415,7 @@ const products = [
     id: "15",
     productName: "PANADOL COLD & FLU 10 KAPLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/f263dead-9753-4520-a07f-b4aaec689d2c_product_image_url.webp',
-    category: "Cough and Flu",
+    group: "Cough and Flu",
     price: 2500,
     shortDesc:
       "PANADOL COLD & FLU merupakan obat dengan kandungan Paracetamol, Pseudoephedrine HCl, dan Dextromethorphan HBr.",
@@ -438,7 +438,7 @@ const products = [
     id: "16",
     productName: "PARACETAMOL 500 MG 10 KAPLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/de2e8223-2622-4861-a47f-64b14e8ed8d5_product_image_url.webp',
-    category: "Fever",
+    group: "Fever",
     price: 1000,
     shortDesc:
       "PARACETAMOL TABLET merupakan obat yang dapat digunakan untuk meringankan rasa sakit pada sakit kepala, sakit gigi, dan menurunkan demam.",
@@ -461,7 +461,7 @@ const products = [
     id: "17",
     productName: "KOOLFEVER FOR ADULT 1 SACHET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/8f3609e7-20ca-468f-a7ac-8d3360ece9d0_product_image_url.webp',
-    category: "Fever",
+    group: "Fever",
     price: 1800,
     shortDesc:
       "KOOLFEVER ADULT merupakan plester kompres penurun panas dan pereda nyeri, serta dapat memberikan efek dingin di saat cuaca panas pada orang dewasa.",
@@ -484,7 +484,7 @@ const products = [
     id: "18",
     productName: "IBUPROFEN 400 MG 10 TABLET",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/7689ed7d-1187-46a8-b919-978989e010ea_product_image_url.webp',
-    category: "Fever",
+    group: "Fever",
     price: 1250,
     shortDesc:
       "IBUPROFEN merupakan obat generik dimana pada kadar 400 mg atau lebih digunakan untuk rasa nyeri dan inflamasi sebagai gejala utama.",
@@ -507,7 +507,7 @@ const products = [
     id: "19",
     productName: "BETADINE SKIN CLEANSER ANTISEPTIC 100 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/bc8da276-31b7-4148-9254-5229e3d25dea_product_image_url.webp',
-    category: "Antiseptics",
+    group: "Antiseptics",
     price: 4500,
     shortDesc:
       "BETADINE SKIN CLEANSER ANTISEPTIC 100 ML sabun cair antiseptik yang mengandung Povidon iodine 7,5% untuk mengatasi masalah pada kulit seperti jerawat dan gatal-gatal, disinfeksi tangan sebelum operasi, dan menjaga kesehatan kulit.",
@@ -530,7 +530,7 @@ const products = [
     id: "20",
     productName: "DETTOL ANTISEPTIK CAIR 245 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/02ac32c9-de61-4d68-91cf-92b4ed77525d_product_image_url.webp',
-    category: "Antiseptics",
+    group: "Antiseptics",
     price: 5500,
     shortDesc:
       "DETTOL ANTISEPTIK CAIR merupakan antiseptik cair yang digunakan sebagai perlindungan dari penyakit yang disebabkan kuman.",
@@ -553,7 +553,7 @@ const products = [
     id: "22",
     productName: "ANTIS JERUK NIPIS SPRAY 55 ML",
     imgUrl: 'https://d2qjkwm11akmwu.cloudfront.net/products/d138f207-6671-4d53-b372-497cc51a265d_product_image_url.webp',
-    category: "Antiseptics",
+    group: "Antiseptics",
     price: 1500,
     shortDesc:
       "ANTIS JERUK NIPIS SPRAY 55 ML merupakan pembersih tangan dalam bentuk spray dengan aroma jeruk nipis yang mengandung moisturaizer yang dapat melembabkan kulit dan dapat membunuh kuman.!",

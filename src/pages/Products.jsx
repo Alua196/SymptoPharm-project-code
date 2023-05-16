@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 
 import CommonSection from '../components/UI/CommonSection';
 import Helmet from '../components/Helmet/Helmet';
@@ -7,12 +7,20 @@ import { Container, Row, Col } from 'reactstrap';
 
 import '../styles/products.css';
 
-import products from '../assets/data/products';
 import ProductsList from '../components/UI/ProductsList';
+
+import useGetData from '../custom-hooks/useGetData';
 
 const Products = () => {
 
-    const [productsData, setProductsData] = useState(products);
+    const { data: products } = useGetData('products');
+    const [productsData, setProductsData] = useState([]);
+
+    useEffect(() => {
+        if (products) {
+            setProductsData(products);
+        }
+    }, [products]);
 
 
     const handleFilter = (e )=>{

@@ -1,10 +1,9 @@
 
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import products from '../assets/data/products';
 
 import Helmet from '../components/Helmet/Helmet';
 import '../styles/home.css';
@@ -19,44 +18,44 @@ import Clock from '../components/UI/Clock';
 
 import counterImg from '../assets/images/counter-timer-img.png';
 
+import useGetData from '../custom-hooks/useGetData';
+
 const Home = () => {
+
+    const { data: products, loading } = useGetData('products');
 
     const [trendingProducts, setTrendingProducts] = useState([]);
     const [bestSalesProducts, setBestSalesProducts] = useState([]);
     const [newArrivalsProducts, setNewArrivalsProducts] = useState([]);
     const [popularProducts, setPopularProducts] = useState([]);
-    const [trendingSecondProducts, setTrendingSecondProducts] = useState([]);
+
+    
 
     const year = new Date().getFullYear();
 
-    useEffect(()=>{
+    useEffect(() => {
         const filteredTrendingProducts = products.filter(
-            (item)=> item.group === 'Vitamins'
-        );
-
-        const filteredTrendingSecondProducts = products.filter(
-            (item)=> item.group === 'Fever'
+            (item) => item.group === 'Vitamins'
         );
 
         const filteredBestSalesProducts = products.filter(
-            (item)=> item.group === 'Antibiotics'
+            (item) => item.group === 'Antibiotics'
         );
 
         const filteredNewArrivalsProducts = products.filter(
-            (item)=> item.group === 'Digestive'
+            (item) => item.group === 'Digestive'
         );
 
         const filteredPopularProducts = products.filter(
-            (item)=> item.group === 'Skin'
+            (item) => item.group === 'Skin'
         );
 
         setTrendingProducts(filteredTrendingProducts);
         setBestSalesProducts(filteredBestSalesProducts);
         setNewArrivalsProducts(filteredNewArrivalsProducts);
         setPopularProducts(filteredPopularProducts);
-        setTrendingSecondProducts(filteredTrendingSecondProducts);
 
-    }, []);
+    }, [products]);
 
     return <Helmet title={"Home"}>
         <section className="hero__section">
@@ -68,7 +67,7 @@ const Home = () => {
                             <h2>Stay Healthy with SymptoPharm!</h2>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima adipisci autem quas atque accusamus placeat fugit dolor veniam ipsam blanditiis.</p>
 
-                            <motion.button whileTap={{scale: 1.1}} className="buy__btn">
+                            <motion.button whileTap={{ scale: 1.1 }} className="buy__btn">
                                 <Link to='/products'>EXPLORE NOW</Link>
                             </motion.button>
                         </div>
@@ -92,8 +91,16 @@ const Home = () => {
                     <Col lg='12' className="text-center">
                         <h2 className="section__title">Trending Products</h2>
                     </Col>
-                    <ProductsList data={trendingProducts} />
-                    <ProductsList data={trendingSecondProducts} />
+
+                    {
+                        loading ? (
+                            <h5 className='fw-bold'>Loading.....</h5>
+                        ) : (
+
+                            <ProductsList data={trendingProducts} />
+                        )
+                    }
+
                 </Row>
             </Container>
         </section>
@@ -101,14 +108,20 @@ const Home = () => {
 
 
         <section className="best__sales">
-        <Container>
+            <Container>
                 <Row>
                     <Col lg='12' className="text-center">
                         <h2 className="section__title">Best Sales</h2>
                     </Col>
 
-                    <ProductsList data={bestSalesProducts} />
-                    <ProductsList data={newArrivalsProducts} />
+                    {
+                        loading ? (
+                            <h5 className='fw-bold'>Loading.....</h5>
+                        ) : (
+
+                            <ProductsList data={bestSalesProducts} />
+                        )
+                    }
                 </Row>
             </Container>
         </section>
@@ -126,9 +139,9 @@ const Home = () => {
                         </div>
                         <Clock />
 
-                        <motion.button whileTap={{scale: 1.2}} className="buy__btn store__btn">
+                        <motion.button whileTap={{ scale: 1.2 }} className="buy__btn store__btn">
                             <Link to="/products">Visit</Link>
-                            </motion.button>
+                        </motion.button>
                     </Col>
 
                     <Col lg='6' md='12' className="text-end counter__img">
@@ -143,11 +156,20 @@ const Home = () => {
         <section className="new__arrivals">
             <Container>
                 <Row>
-                <Col lg='12' className="text-center mb-5">
+                    <Col lg='12' className="text-center mb-5">
                         <h2 className="section__title">New Arrivals</h2>
                     </Col>
 
-                    <ProductsList data={newArrivalsProducts} />
+                    {
+                        loading ? (
+                            <h5 className='fw-bold'>Loading.....</h5>
+                        ) : (
+
+                            <ProductsList data={newArrivalsProducts} />
+                        )
+                    }
+
+                    
 
                 </Row>
             </Container>
@@ -158,11 +180,18 @@ const Home = () => {
         <section className="popular__group">
             <Container>
                 <Row>
-                <Col lg='12' className="text-center mb-5">
+                    <Col lg='12' className="text-center mb-5">
                         <h2 className="section__title">Popular in Group</h2>
                     </Col>
 
-                    <ProductsList data={popularProducts} />
+                    {
+                        loading ? (
+                            <h5 className='fw-bold'>Loading.....</h5>
+                        ) : (
+
+                            <ProductsList data={popularProducts} />
+                        )
+                    }
 
                 </Row>
             </Container>

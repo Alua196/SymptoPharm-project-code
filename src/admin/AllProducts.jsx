@@ -39,7 +39,7 @@ const AllProducts = () => {
                                     productsData.map(item => (
                                         <tr key={item.id}>
                                             <td><img src={item.imgURL} alt="" /></td>
-                                            <td>{item.title}</td>
+                                            <td>{item.productName}</td>
                                             <td>{item.group}</td>
                                             <td>{item.price}₸</td>
                                             <td>

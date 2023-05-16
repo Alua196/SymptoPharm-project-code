@@ -3,7 +3,6 @@ import React, { useState, useRef , useEffect } from 'react';
 
 import { Container, Row, Col } from 'reactstrap';
 import { useParams } from "react-router-dom";
-import products from '../assets/data/products';
 import Helmet from '../components/Helmet/Helmet';
 import CommonSection from '../components/UI/CommonSection';
 import '../styles/product-details.css';
@@ -13,20 +12,64 @@ import { useDispatch } from 'react-redux';
 import { favActions } from '../redux/slices/favSlice';
 import { toast } from 'react-toastify';
 
+import { db } from '../firebase.config';
+import { doc, getDoc } from 'firebase/firestore';
+import useGetData from '../custom-hooks/useGetData';
 
 const ProductDetails = () => {
 
+    const { data: products } = useGetData('products');
+
+    const [product, setProduct] = useState({});
     const [tab, setTab] = useState('desc');
-    const reviewUser = useRef('')
-    const reviewMsg = useRef('')
-    const dispatch = useDispatch()
+    const reviewUser = useRef('');
+    const reviewMsg = useRef('');
+    const dispatch = useDispatch();
 
 
     const [rating, setRating] = useState(null);
     const { id } = useParams();
-    const product = products.find(item => item.id === id);
 
-    const { imgUrl, productName, price, avgRating, reviews, description, shortDesc, group } = product;
+    console.log(products)
+    
+
+    const docRef = doc(db,'products', id);
+
+    useEffect(() => {
+        const getProduct = async () => {
+          try {
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+              setProduct(docSnap.data());
+            } else {
+              console.log('no product');
+            }
+          } catch (error) {
+            console.log('Error fetching product', error);
+          }
+        };
+      
+        getProduct();
+      }, [docRef, id]);
+    
+
+    const { 
+        description, 
+        group, 
+        imgURL, 
+        price, 
+        productName ,
+        // avgRating, 
+        // reviews,
+        shortDesc
+    } = product;
+
+
+    console.log(id);
+    console.log(group);
+    console.log(products);
+    console.log(product);
+
 
 
     const relatedProducts = products.filter(item => item.group === group);
@@ -52,7 +95,7 @@ const ProductDetails = () => {
         dispatch(
             favActions.addItem({
                 id,
-                image: imgUrl,
+                image: imgURL,
                 productName,
                 price,
 
@@ -75,7 +118,7 @@ const ProductDetails = () => {
             <section className='pt-0'>
                 <Row>
                     <Col lg='6'>
-                        <img src={imgUrl} alt="" />
+                        <img src={imgURL} alt="" />
                     </Col>
 
                     <Col lg='6'>
@@ -90,7 +133,7 @@ const ProductDetails = () => {
                                     <span><i class="ri-star-half-s-fill"></i></span>
                                 </div>
 
-                                <p>(<span>{avgRating}</span> ratings)</p>
+                                {/* <p>(<span>{avgRating}</span> ratings)</p> */}
                             </div>
 
                             <div className='d-flex align-items-center gap-5'>
@@ -116,7 +159,9 @@ const ProductDetails = () => {
                                     onClick={() => setTab('desc')}>Description</h6>
 
                                 <h6 className={`${tab === "rev" ? "active__tab" : ""}`}
-                                    onClick={() => setTab('rev')}>Reviews ({reviews.length})</h6>
+                                    onClick={() => setTab('rev')}>
+                                        Reviews 
+                                        </h6>
                             </div>
 
 
@@ -128,7 +173,7 @@ const ProductDetails = () => {
                                 ) : (
                                     <div className='product__review mt-5'>
                                         <div className="review__wrapper">
-                                            <ul>
+                                            {/* <ul>
                                                 {
                                                     reviews?.map((item, index) => (
                                                         <li kew={index} className="mb-4">
@@ -138,7 +183,7 @@ const ProductDetails = () => {
                                                         </li>
                                                     ))
                                                 }
-                                            </ul>
+                                            </ul> */}
 
                                             <div className="review__form">
                                                 <h4>Leave your experience!</h4>

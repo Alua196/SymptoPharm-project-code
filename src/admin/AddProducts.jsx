@@ -50,7 +50,7 @@ const AddProducts = () => {
                     try {
                         const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
                         const productData = {
-                            title: enterTitle,
+                            productName: enterTitle,
                             shortDesc: enterShortDesc,
                             description: enterDesc,
                             group: enterGroup,
@@ -143,7 +143,7 @@ const AddProducts = () => {
                                                     onChange={e => setEnterGroup(e.target.value)}
                                                     required
                                                 >
-                                                    <option>Filter by Group</option>
+                                                    <option>Select Group</option>
                                                     <option value="Antibiotics">Antibiotics</option>
                                                     <option value="Vitamins">Vitamins</option>
                                                     <option value="Digestive">Digestive</option>

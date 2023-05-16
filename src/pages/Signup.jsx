@@ -52,13 +52,13 @@ const Signup = () => {
                 const downloadURL = await getDownloadURL(snapshot.ref);
 
                 await updateProfile(user, {
-                    displayName: fullname,
+                    full_name: fullname,
                     photoURL: downloadURL
                 });
 
                 await setDoc(doc(db, "users", user.uid), {
                     uid: user.uid,
-                    displayName: fullname,
+                    full_name: fullname,
                     email,
                     photoURL: downloadURL
                 });
